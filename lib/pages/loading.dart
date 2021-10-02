@@ -23,10 +23,21 @@ class _LoadingState extends State<Loading> {
   else{
     now = now.subtract(Duration(hours: offsetnum[0],minutes: offsetnum[1]));
   }
-
+  print(now);
   }
   @override
+  void initState() {
+    super.initState();
+    getTime();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+        title:  Text('Loading'),
+      //body:Text('loading screen'),
+        )
+    );
   }
 }

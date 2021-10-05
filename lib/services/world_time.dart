@@ -3,13 +3,13 @@ import 'dart:convert';
 
 class WorldTime {
   String location;
-  String? time ;
+  String time ='';
   String flag;
   String url;
 
   WorldTime({required this.location,required this.flag,required this.url});
 
-  void getTime() async{
+  Future<void> getTime() async{
     Response response = await get(Uri.parse('https://worldtimeapi.org/api/timezone/$url'));
     Map data = jsonDecode(response.body);
     String datetime = data['datetime'];
